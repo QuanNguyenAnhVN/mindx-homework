@@ -1,0 +1,23 @@
+.buttonMain{
+    padding: 2rem;
+    background-color: whitesmoke;
+}
+
+.buttonMain >*{
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+a{
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+a:hover{
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
