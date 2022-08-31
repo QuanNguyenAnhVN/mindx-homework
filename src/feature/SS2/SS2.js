@@ -92,7 +92,8 @@ function SS2_03() {
 }
 
 function SS2_04() {
-    document.getElementById('SS2-04').style.display = "block"
+    document.getElementById('SS2-04').style.display = "block";
+
 }
 
 function Contact(name, phone) {
@@ -101,6 +102,7 @@ function Contact(name, phone) {
 }
 
 var contacts = [];
+contacts.push(new Contact("Quan", "0865926335"));
 
 function listContacts() {
     document.getElementById('displayContacts').innerHTML = "";
