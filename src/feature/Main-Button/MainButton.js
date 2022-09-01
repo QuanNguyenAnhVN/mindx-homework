@@ -5,10 +5,10 @@ export default function MainButton() {
     return (
         <section>
             <div className='buttonMain'>
-                <a href='#' id='SS2_01'>Season 2 Questions</a>
-                <a href='#' id='SS2_01'>Season 3 Questions</a>
-                <a href='#' id='SS2_01'>Season 4 Questions</a>
-                <a href='#' id='SS2_01'>Season 5 Questions</a>
+                <a href='#' id='SS2'>Season 2 Questions</a>
+                <a href='#' id='SS3'>Season 3 Questions</a>
+                <a href='#' id='SS4'>Season 4 Questions</a>
+                <a href='#' id='SS5'>Season 5 Questions</a>
             </div>
         </section>
     )
