@@ -37,3 +37,8 @@
 #SS2-04 hr{width: 40%;}
 
 #SS2-04 >*{margin-top: 0.5rem;}
+
+#displayContacts td {
+    padding: 0 2rem 0 2rem;
+    border-bottom: 1px solid black;
+}

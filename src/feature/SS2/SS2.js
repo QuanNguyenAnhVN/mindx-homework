@@ -32,13 +32,13 @@ export default function SS2() {
                         <div className='add-item'>
                             <input type="text" placeholder='Name' id='inputName' />
                             <input type="text" placeholder='Phone No' id='inputPhone' />
-                            <button onClick={addNewContact()}>Add</button>
+                            <button onClick={addNewContact}>Add</button>
                         </div>
                         <hr />
                         <div className='contact-list'>
                             <input type="text" placeholder='Search' id='inputSearch' />
-                            <button>Search</button>
-                            <button>Delete Duplicate</button>
+                            <button onClick={searchContact}>Search</button>
+                            <button onClick={deleteDuplicateContact}>Delete Duplicate</button>
                             <table id='displayContacts' className='table'></table>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ function SS2_03() {
 }
 
 function SS2_04() {
-    document.getElementById('SS2-04').style.display = "block";
+    document.getElementById('SS2-04').style.display = "visibility";
 
 }
 
@@ -102,7 +102,6 @@ function Contact(name, phone) {
 }
 
 var contacts = [];
-contacts.push(new Contact("Quan", "0865926335"));
 
 function listContacts() {
     document.getElementById('displayContacts').innerHTML = "";
@@ -114,11 +113,37 @@ function listContacts() {
 function addNewContact() {
     var name = document.getElementById('inputName').value;
     var phone = document.getElementById('inputPhone').value;
-    console.log(name);
-    console.log(phone);
     var contact = new Contact(name, phone);
     contacts.push(contact);
     listContacts();
 }
 
-listContacts();
+function searchContact() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("inputSearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("displayContacts");
+    tr = table.getElementsByTagName("tr");
+    for (var i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function deleteDuplicateContact() {
+    var table = document.getElementById('displayContacts');
+    var tr = table.getElementsByTagName("tr");
+    var newTable = [...new Set(tr)];
+    console.log(newTable);
+    document.getElementById('displayContacts').innerHTML = "";
+    for (var i = 0; i < newTable.length; i++) {
+        document.getElementById('displayContacts').innerHTML += '<tr><td id="name' + i + '">' + newTable[i].name + '</td><td id="phone' + i + '">' + newTable[i].phone;
+    }
+}
