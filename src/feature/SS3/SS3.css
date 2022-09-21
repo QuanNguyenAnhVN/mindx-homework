@@ -1,0 +1,29 @@
+.main-function{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-function h1{
+    text-align: center;
+}
+.main-function >*{
+    margin: 0.5rem 0 0.5rem 0;
+}
+.inputTodolist{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+.inputTodolist >*{
+    margin-right: 0.5rem;
+}
+.btn{
+    height: 2rem;
+    width: 5rem;
+}
+
+.listContainer{
+    width: 50%;
+}
