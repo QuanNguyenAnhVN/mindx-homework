@@ -1,11 +1,20 @@
 import React from 'react'
+import './SS3.css'
+export default function TodoList({ item,index }) {
 
-export default function TodoList({item}) {
+  const removeList = (item) => {
+    const removeDupList = item.slice();
+    removeDupList.splice(item.content,1);
+    this.setTodos({
+      content: removeDupList
+    })
+  }
+
   return (
-    <div>
-      <p className='list-container'></p>
-      <buttton className='btn btn-start'>Start</buttton>
-      <buttton className='btn btn-delete'>Delete</buttton>
+    <div className='list-container'>
+      <p>{item.content}</p>
+      <button className='btn btn-start'>Start</button>
+      <button className='btn btn-delete' onClick={removeList.bind(this,index)}>Delete</button>
     </div>
   )
 }

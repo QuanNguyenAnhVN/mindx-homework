@@ -5,8 +5,10 @@ export default function SS2() {
 
     return (
         <section>
-            <h1 style={{ color: "red" }}>Season 2 Coding HomeWork</h1>
-            <Q1 />
+            <div className="main-function">
+                <h1 style={{ color: "Red" }}>Season 2 Coding HomeWork</h1>
+
+            </div>
         </section>
     )
 }
